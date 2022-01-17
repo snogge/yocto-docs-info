@@ -33,6 +33,8 @@ jobs:
         uses: ammaraskar/sphinx-action@0.4
         with:
           docs-folder: "bitbake/doc/"
+          pre-build-command: |
+            pip install sphinx_rtd_theme
           build-command: "make info"
 
         
