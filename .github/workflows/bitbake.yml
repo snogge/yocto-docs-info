@@ -32,7 +32,7 @@ jobs:
       - name: Build docs
         uses: ammaraskar/sphinx-action@0.4
         with:
-          docs-folder: "bitbake/docs"
+          docs-folder: "bitbake/doc/"
           build-command: "make info"
 
         
