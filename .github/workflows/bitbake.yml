@@ -35,6 +35,7 @@ jobs:
           docs-folder: "bitbake/doc/"
           pre-build-command: |
             pip install sphinx_rtd_theme
+            apt-get update -y && apt-get install -y texinfo
           build-command: "make info"
 
         
