@@ -19,7 +19,7 @@ jobs:
   # This workflow contains a single job called "build"
   build:
     # The type of runner that the job will run on
-    runs-on: sphinxdoc/sphinx
+    runs-on: ubuntu-latest
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
@@ -30,7 +30,10 @@ jobs:
         run: git clone --depth=1 git://git.openembedded.org/bitbake
 
       - name: Build docs
-        run: make -C bitbake/doc info
+        uses: ammaraskar/sphinx-action@0.4
+        with:
+          docs-folder: "bitbake/docs"
+          build-command: "make info"
 
         
       # # Runs a single command using the runners shell
