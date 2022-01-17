@@ -4,6 +4,7 @@ BITBAKE_VERSION := $(shell git -C bitbake describe --long | cut --delim=- --fiel
 PKG_DIR = bitbake-manual-master-$(BITBAKE_VERSION)
 
 all: bitbake-manual-master-pkg.el
+	git -C bitbake describe --long
 	mkdir -p $(PKG_DIR)
 	cp bitbake/doc/_build/texinfo/bitbake.info $(PKG_DIR)/bitbake-master.info
 	install-info --info-dir $(PKG_DIR) --info-file $(PKG_DIR)/bitbake-master.info
