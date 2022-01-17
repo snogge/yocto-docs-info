@@ -27,7 +27,7 @@ jobs:
       - uses: actions/checkout@v2
 
       - name: Clone bitbake
-        run: git clone --depth=1 git://git.openembedded.org/bitbake
+        run: git clone --depth=100 git://git.openembedded.org/bitbake
 
       - name: Build docs
         uses: ammaraskar/sphinx-action@0.4
@@ -38,6 +38,8 @@ jobs:
             apt-get update -y && apt-get install -y texinfo
           build-command: "make info"
 
+      - name: Build package
+        run: make
         
       # # Runs a single command using the runners shell
       # - name: Run a one-line script
